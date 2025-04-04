@@ -1,0 +1,17 @@
+def word_frequency(text):
+    words = text.split()
+    word_count = len(words)
+    frequency = dict(Counter(words))
+    return word_count, frequency
+
+
+def main():
+    text = input("Enter a sentence or paragraph: ")
+    count, freq = word_frequency(text)
+    print(f"The number of words is: {count}")
+    print("Word Frequency:")
+    for word, frequency in freq.items():
+        print(f"{word}: {frequency}")
+
+
+main()
