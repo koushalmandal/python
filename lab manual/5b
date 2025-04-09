@@ -1,0 +1,16 @@
+import numpy as np
+
+# Create two 3x3 matrices with random integers from 1 to 10
+A = np.random.randint(1, 11, (3, 3))
+B = np.random.randint(1, 11, (3, 3))
+
+print("Matrix A:\n", A)
+print("\nMatrix B:\n", B)
+
+# Matrix subtraction
+sub_result = A - B
+print("\nMatrix Subtraction (A - B):\n", sub_result)
+
+# Element-wise division (A / B)
+div_result = A / B
+print("\nElement-wise Division (A / B):\n", div_result)
