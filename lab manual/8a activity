@@ -1,0 +1,36 @@
+import pandas as pd
+
+# Load the CSV file
+try:
+    df = pd.read_csv("2salary.csv")
+
+    # Check if 'Salary' column exists
+    if 'Salary' in df.columns:
+        # Central Tendency
+        mean_salary = df['Salary'].mean()
+        median_salary = df['Salary'].median()
+        mode_salary = df['Salary'].mode()[0]
+
+        # Dispersion Measures
+        min_salary = df['Salary'].min()
+        max_salary = df['Salary'].max()
+        variance_salary = df['Salary'].var()
+        std_dev_salary = df['Salary'].std()
+
+        # Display results
+        print("Central Tendency Measures:")
+        print(f"Mean Salary: {mean_salary:.2f}")
+        print(f"Median Salary: {median_salary:.2f}")
+        print(f"Mode Salary: {mode_salary:.2f}")
+        print("\nDispersion Measures:")
+        print(f"Minimum Salary: {min_salary:.2f}")
+        print(f"Maximum Salary: {max_salary:.2f}")
+        print(f"Variance: {variance_salary:.2f}")
+        print(f"Standard Deviation: {std_dev_salary:.2f}")
+    else:
+        print("The 'Salary' column is not found in the dataset.")
+
+except FileNotFoundError:
+    print("The file '2salary.csv' was not found. Please check the file name or path.")
+except Exception as e:
+    print(f"An error occurred: {e}")
