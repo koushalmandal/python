@@ -1,0 +1,23 @@
+import pandas as pd
+
+# Load a CSV file into a DataFrame
+df = pd.read_csv(r'C:\SHANTIRVU\Programs\Minors\IDA\Activities\Datasets\6Mcd_null_values.csv')
+
+print("🔹 Original DataFrame:")
+print(df)
+
+# Step 1: Identifying missing values
+print("\n🔍 Missing values in the DataFrame:")
+print(df.isnull().sum())
+
+# Step 2: Fill all missing values (numeric columns only) with column means
+df.fillna(df.mean(numeric_only=True), inplace=True)
+
+print("\n✅ DataFrame after filling all missing values with column means:")
+print(df)
+
+# Step 3: Drop duplicate rows (if any)
+df.drop_duplicates(inplace=True)
+
+print("\n🧹 Final DataFrame after dropping duplicates:")
+print(df)
